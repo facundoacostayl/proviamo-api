@@ -6,7 +6,8 @@ const port = 4000;
 const app = express();
 
 //Middlewares
-app.use(cors);
+app.use(cors());
+app.use(express.json());
 
 module.exports = {
     app,
