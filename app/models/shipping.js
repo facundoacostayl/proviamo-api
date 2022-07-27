@@ -41,9 +41,9 @@ const ShippingScheme = new mongoose.Schema({
         type: String
     }
 },
-{
-    timestamps: true,
-    versionKey: false
-});
+    {
+        timestamps: true,
+        versionKey: false
+    });
 
 module.exports = mongoose.model("shipping", ShippingScheme);
