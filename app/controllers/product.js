@@ -7,9 +7,19 @@ const getProducts = async (req, res) => {
 
         res.send(data);
     } catch (e) {
-        handleError(res, "No se ha encontrado la lista", 401)
+        handleError(res, "ERROR_GET_PRODUCTS", 401)
     }
+}
 
+const getProduct = async(req, res) => {
+    try {
+        const {id} = req.params
+        const data = await productModel.findById({id})
+
+        res.send(data)
+    }catch(e) {
+        handleError(res, "ERROR_GET_PRODUCT", 401)
+    }
 }
 
 module.exports = { getProducts };
