@@ -96,11 +96,11 @@ const addShippingData = async () => {
             order.status = status;
             await shippingModel.findOneAndUpdate(); //UPDATE DB ORDER TABLE STATUS
           
-            res.sendFile(require.resolve("./frontend/index.html"));
+            res.sendFile(require.resolve("./frontend/index.html")); //INVESTIGATE ABOUT THIS
           
             
             }catch(e){
-              console.log("ERROR " + e.toString())
+              handleError(res, "ERROR_GET_FEEDBACK", 401);
             }
     }
 
